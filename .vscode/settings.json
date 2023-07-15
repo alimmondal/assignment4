@@ -1,0 +1,7 @@
+{
+  "cSpell.words": ["alim", "codepaths", "tsbuildinfo", "virtuals"],
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true,
+    "source.organizeImports": true
+  }
+}
