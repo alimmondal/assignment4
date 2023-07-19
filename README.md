@@ -1,6 +1,7 @@
 <!-- Deployed Live Link (Railway) -->
 
-1. https://cow-admin.vercel.app(this is not working well)
+<!-- 1. https://cow-admin.vercel.app(this is not working well) -->
+
 2. https://assignment4-production.up.railway.app/
 
 <!-- Auth (User) -->
