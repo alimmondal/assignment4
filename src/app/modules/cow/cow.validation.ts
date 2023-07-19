@@ -3,7 +3,7 @@ import { breed, category, label, location } from './cow.constant';
 
 const updateCowZodSchema = z.object({
   body: z.object({
-    name: z.string({}),
+    name: z.string({}).optional(),
     age: z.number().optional(),
     price: z.number().optional(),
     category: z.enum([...category] as [string, ...string[]]).optional(),
