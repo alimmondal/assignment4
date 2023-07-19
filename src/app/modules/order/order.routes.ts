@@ -7,7 +7,7 @@ const router = express.Router();
 router.post(
   '/',
   // validateRequest(OrderValidation.createOrderZodSchema),
-  auth(ENUM_USER_ROLE.BUYER),
+  auth(ENUM_USER_ROLE.BUYER, ENUM_USER_ROLE.ADMIN),
   OrderController.createOrders
 );
 

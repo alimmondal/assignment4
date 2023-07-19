@@ -72,7 +72,7 @@ const getAllCows = async (
 };
 
 const getSingleCow = async (id: string): Promise<ICow | null> => {
-  const result = await Cow.findOne({ _id: id }).populate('seller');
+  const result = await Cow.findOne({ _id: id });
   return result;
 };
 

@@ -15,7 +15,7 @@ router.get(
 router.post(
   '/',
   validateRequest(CowValidation.createCowZodSchema),
-  auth(ENUM_USER_ROLE.SELLER),
+  auth(ENUM_USER_ROLE.SELLER, ENUM_USER_ROLE.ADMIN),
   CowController.createCow
 );
 router.get(
@@ -24,12 +24,16 @@ router.get(
   CowController.getAllCows
 );
 
-router.delete('/:id', auth(ENUM_USER_ROLE.SELLER), CowController.deleteCow);
+router.delete(
+  '/:id',
+  auth(ENUM_USER_ROLE.SELLER, ENUM_USER_ROLE.ADMIN),
+  CowController.deleteCow
+);
 
 router.patch(
   '/:id',
   validateRequest(CowValidation.updateCowZodSchema),
-  auth(ENUM_USER_ROLE.SELLER),
+  auth(ENUM_USER_ROLE.SELLER, ENUM_USER_ROLE.ADMIN),
   CowController.updateCow
 );
 

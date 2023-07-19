@@ -1,6 +1,7 @@
 <!-- Deployed Live Link (Railway) -->
 
-1. https://cow-admin.vercel.app
+1. https://cow-admin.vercel.app(this is not working well)
+2. https://assignment4-production.up.railway.app/
 
 <!-- Auth (User) -->
 
@@ -32,7 +33,7 @@
 
 <!-- Pagination and Filtering routes of Cows -->
 
-1. api/v1/cows/create-cow(POST)
+1. api/v1/cows(POST)
 1. api/v1/cows/64b16e0fa5cfd6732dedf3f8(GET)
 1. api/v1/cows/64b15967065766883fd436ed(DELETE)
 1. api/v1/cows/64b16e0fa5cfd6732dedf3f8(UPDATE)
