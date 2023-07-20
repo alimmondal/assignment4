@@ -3,32 +3,32 @@ import { role } from './user.constant';
 
 const createUserZodSchema = z.object({
   body: z.object({
-    user: z.object({
-      role: z.enum([...role] as [string, ...string[]]).optional(),
-      password: z.string().optional(),
-      name: z.object({
-        firstName: z.string({
-          required_error: 'First name is required',
-        }),
-        middleName: z.string().optional(),
-        lastName: z.string({
-          required_error: 'Last name is required',
-        }),
+    // user: z.object({
+    role: z.enum([...role] as [string, ...string[]]).optional(),
+    password: z.string().optional(),
+    name: z.object({
+      firstName: z.string({
+        required_error: 'First name is required',
       }),
-      phoneNumber: z.string({
-        required_error: 'PhoneNumber contact number is required',
-      }),
-      address: z.string({
-        required_error: 'Address address is required',
-      }),
-      budget: z.number({
-        required_error: 'Budget budget is required',
-      }),
-      income: z.number({
-        required_error: 'Income  is required',
+      middleName: z.string().optional(),
+      lastName: z.string({
+        required_error: 'Last name is required',
       }),
     }),
+    phoneNumber: z.string({
+      required_error: 'PhoneNumber contact number is required',
+    }),
+    address: z.string({
+      required_error: 'Address address is required',
+    }),
+    budget: z.number({
+      required_error: 'Budget budget is required',
+    }),
+    income: z.number({
+      required_error: 'Income  is required',
+    }),
   }),
+  // }),
 });
 
 const updateUserZodSchema = z.object({

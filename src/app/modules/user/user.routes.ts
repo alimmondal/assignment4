@@ -8,11 +8,11 @@ const router = express.Router();
 
 router.get('/:id', auth(ENUM_USER_ROLE.ADMIN), UserController.getSingleUser);
 
-router.post(
-  '/signup',
-  validateRequest(UserValidation.createUserZodSchema),
-  UserController.createUser
-);
+// router.post(
+//   '/signup',
+//   validateRequest(UserValidation.createUserZodSchema),
+//   UserController.createUser
+// );
 
 router.get('/', auth(ENUM_USER_ROLE.ADMIN), UserController.getAllUsers);
 

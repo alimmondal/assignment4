@@ -11,7 +11,7 @@ import { CowService } from './cow.service';
 
 const createCow: RequestHandler = catchAsync(
   async (req: Request, res: Response) => {
-    const { cow } = req.body;
+    const cow = req.body;
     const result = await CowService.createCowToDb(cow);
 
     sendResponse<ICow>(res, {

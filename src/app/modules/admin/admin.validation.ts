@@ -14,20 +14,20 @@ const updateAdmin = z.object({
   }),
 });
 
-const creatAdminZodSchema = z.object({
+const createAdminZodSchema = z.object({
   body: z.object({
-    admin: z.object({
-      phoneNumber: z.string().optional(),
-      role: z.string().optional(),
-      password: z.string().optional(),
-      name: z.object({
-        firstName: z.string().optional(),
-        lastName: z.string().optional(),
-      }),
-      address: z.string().optional(),
-      // profileImage: z.string().optional(),
+    // admin: z.object({
+    phoneNumber: z.string().optional(),
+    role: z.string().optional(),
+    password: z.string().optional(),
+    name: z.object({
+      firstName: z.string().optional(),
+      lastName: z.string().optional(),
     }),
+    address: z.string().optional(),
+    // profileImage: z.string().optional(),
   }),
+  // }),
 });
 
 const AdminLoginZodSchema = z.object({
@@ -51,7 +51,7 @@ const AdminRefreshTokenZodSchema = z.object({
 
 export const AdminValidation = {
   updateAdmin,
-  creatAdminZodSchema,
+  createAdminZodSchema,
   AdminLoginZodSchema,
   AdminRefreshTokenZodSchema,
 };

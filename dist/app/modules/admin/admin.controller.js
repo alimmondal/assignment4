@@ -33,7 +33,7 @@ const sendResponse_1 = __importDefault(require("../../../shared/sendResponse"));
 const admin_constant_1 = require("./admin.constant");
 const admin_service_1 = require("./admin.service");
 const createAdmin = (0, catchAsync_1.default)((req, res) => __awaiter(void 0, void 0, void 0, function* () {
-    const { admin } = req.body;
+    const admin = req.body;
     const result = yield admin_service_1.AdminService.createAdminToDb(admin);
     (0, sendResponse_1.default)(res, {
         statusCode: http_status_1.default.OK,

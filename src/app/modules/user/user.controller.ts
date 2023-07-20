@@ -1,5 +1,5 @@
 /* eslint-disable no-console */
-import { Request, RequestHandler, Response } from 'express';
+import { Request, Response } from 'express';
 
 import httpStatus from 'http-status';
 import catchAsync from '../../../shared/catchAsync';
@@ -7,20 +7,20 @@ import sendResponse from '../../../shared/sendResponse';
 import { IUser } from './user.interface';
 import { UserService } from './user.service';
 
-const createUser: RequestHandler = catchAsync(
-  async (req: Request, res: Response) => {
-    // console.log(req.cookies, 'cookie');
-    const { user } = req.body;
-    const result = await UserService.createUsersToDb(user);
+// const createUser: RequestHandler = catchAsync(
+//   async (req: Request, res: Response) => {
+//     // console.log(req.cookies, 'cookie');
+//     const { user } = req.body;
+//     const result = await UserService.createUsersToDb(user);
 
-    sendResponse<IUser>(res, {
-      statusCode: httpStatus.OK,
-      success: true,
-      message: 'User created successfully',
-      data: result,
-    });
-  }
-);
+//     sendResponse<IUser>(res, {
+//       statusCode: httpStatus.OK,
+//       success: true,
+//       message: 'User created successfully',
+//       data: result,
+//     });
+//   }
+// );
 
 const getAllUsers = catchAsync(async (req: Request, res: Response) => {
   const result = await UserService.getAllUsers();
@@ -75,7 +75,7 @@ const deleteUser = catchAsync(async (req: Request, res: Response) => {
 });
 
 export const UserController = {
-  createUser,
+  // createUser,
   getAllUsers,
   getSingleUser,
   updateUser,

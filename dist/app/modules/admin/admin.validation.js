@@ -15,20 +15,20 @@ const updateAdmin = zod_1.z.object({
         // profileImage: z.string().optional(),
     }),
 });
-const creatAdminZodSchema = zod_1.z.object({
+const createAdminZodSchema = zod_1.z.object({
     body: zod_1.z.object({
-        admin: zod_1.z.object({
-            phoneNumber: zod_1.z.string().optional(),
-            role: zod_1.z.string().optional(),
-            password: zod_1.z.string().optional(),
-            name: zod_1.z.object({
-                firstName: zod_1.z.string().optional(),
-                lastName: zod_1.z.string().optional(),
-            }),
-            address: zod_1.z.string().optional(),
-            // profileImage: z.string().optional(),
+        // admin: z.object({
+        phoneNumber: zod_1.z.string().optional(),
+        role: zod_1.z.string().optional(),
+        password: zod_1.z.string().optional(),
+        name: zod_1.z.object({
+            firstName: zod_1.z.string().optional(),
+            lastName: zod_1.z.string().optional(),
         }),
+        address: zod_1.z.string().optional(),
+        // profileImage: z.string().optional(),
     }),
+    // }),
 });
 const AdminLoginZodSchema = zod_1.z.object({
     body: zod_1.z.object({
@@ -49,7 +49,7 @@ const AdminRefreshTokenZodSchema = zod_1.z.object({
 });
 exports.AdminValidation = {
     updateAdmin,
-    creatAdminZodSchema,
+    createAdminZodSchema,
     AdminLoginZodSchema,
     AdminRefreshTokenZodSchema,
 };

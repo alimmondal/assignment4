@@ -16,17 +16,17 @@ const updateCowZodSchema = z.object({
 
 const createCowZodSchema = z.object({
   body: z.object({
-    cow: z.object({
-      name: z.string({}),
-      age: z.number().optional(),
-      price: z.number().optional(),
-      category: z.enum([...category] as [string, ...string[]]),
-      label: z.enum([...label] as [string, ...string[]]),
-      breed: z.enum([...breed] as [string, ...string[]]),
-      location: z.enum([...location] as [string, ...string[]]).optional(),
-      // user: z.string().optional(),
-    }),
+    // cow: z.object({
+    name: z.string({}),
+    age: z.number().optional(),
+    price: z.number().optional(),
+    category: z.enum([...category] as [string, ...string[]]),
+    label: z.enum([...label] as [string, ...string[]]),
+    breed: z.enum([...breed] as [string, ...string[]]),
+    location: z.enum([...location] as [string, ...string[]]).optional(),
+    // user: z.string().optional(),
   }),
+  // }),
 });
 
 export const CowValidation = {

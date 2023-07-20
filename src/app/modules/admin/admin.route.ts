@@ -7,7 +7,7 @@ const router = express.Router();
 router.get('/:id', AdminController.getSingleAdmin);
 router.post(
   '/create-admin',
-  validateRequest(AdminValidation.creatAdminZodSchema),
+  validateRequest(AdminValidation.createAdminZodSchema),
   AdminController.createAdmin
 );
 router.post(

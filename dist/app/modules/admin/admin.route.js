@@ -10,7 +10,7 @@ const admin_controller_1 = require("./admin.controller");
 const admin_validation_1 = require("./admin.validation");
 const router = express_1.default.Router();
 router.get('/:id', admin_controller_1.AdminController.getSingleAdmin);
-router.post('/create-admin', (0, validateRequest_1.default)(admin_validation_1.AdminValidation.creatAdminZodSchema), admin_controller_1.AdminController.createAdmin);
+router.post('/create-admin', (0, validateRequest_1.default)(admin_validation_1.AdminValidation.createAdminZodSchema), admin_controller_1.AdminController.createAdmin);
 router.post('/login', (0, validateRequest_1.default)(admin_validation_1.AdminValidation.AdminLoginZodSchema), admin_controller_1.AdminController.loginAdmin);
 router.post('/refresh-token', (0, validateRequest_1.default)(admin_validation_1.AdminValidation.AdminRefreshTokenZodSchema), admin_controller_1.AdminController.refreshToken);
 router.get('/', admin_controller_1.AdminController.getAllAdmins);

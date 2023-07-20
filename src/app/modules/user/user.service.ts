@@ -2,20 +2,20 @@ import httpStatus from 'http-status';
 import ApiError from '../../../errors/ApiError';
 import { IUser } from './user.interface';
 import { User } from './user.model';
-import { generateBuyerId, generateSellerId } from './user.utils';
+// import { generateBuyerId, generateSellerId } from './user.utils';
 
-const createUsersToDb = async (user: IUser): Promise<IUser | null> => {
-  if (user.role === 'seller') {
-    const id = await generateSellerId();
-    user.id = id;
-  } else {
-    const id = await generateBuyerId();
-    user.id = id;
-  }
+// const createUsersToDb = async (user: IUser): Promise<IUser | null> => {
+//   if (user.role === 'seller') {
+//     const id = await generateSellerId();
+//     user.id = id;
+//   } else {
+//     const id = await generateBuyerId();
+//     user.id = id;
+//   }
 
-  const result = await User.create(user);
-  return result;
-};
+//   const result = await User.create(user);
+//   return result;
+// };
 
 const getAllUsers = async (): Promise<IUser[]> => {
   const result = await User.find({});
@@ -62,7 +62,7 @@ const deleteCUser = async (id: string): Promise<IUser | null> => {
 };
 
 export const UserService = {
-  createUsersToDb,
+  // createUsersToDb,
   getAllUsers,
   updateUser,
   deleteCUser,

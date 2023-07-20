@@ -11,7 +11,7 @@ import { AuthService } from './auth.service';
 const signup: RequestHandler = catchAsync(
   async (req: Request, res: Response) => {
     console.log(req.cookies, 'cookie');
-    const { user } = req.body;
+    const user = req.body;
     const result = await AuthService.createUsersToDb(user);
 
     sendResponse<IUser>(res, {

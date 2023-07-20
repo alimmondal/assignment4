@@ -21,7 +21,7 @@ const sendResponse_1 = __importDefault(require("../../../shared/sendResponse"));
 const cow_constant_1 = require("./cow.constant");
 const cow_service_1 = require("./cow.service");
 const createCow = (0, catchAsync_1.default)((req, res) => __awaiter(void 0, void 0, void 0, function* () {
-    const { cow } = req.body;
+    const cow = req.body;
     const result = yield cow_service_1.CowService.createCowToDb(cow);
     (0, sendResponse_1.default)(res, {
         statusCode: http_status_1.default.OK,

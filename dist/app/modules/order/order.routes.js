@@ -12,5 +12,5 @@ const router = express_1.default.Router();
 router.post('/', 
 // validateRequest(OrderValidation.createOrderZodSchema),
 (0, auth_1.default)(user_1.ENUM_USER_ROLE.BUYER, user_1.ENUM_USER_ROLE.ADMIN), order_controller_1.OrderController.createOrders);
-router.get('/', (0, auth_1.default)(user_1.ENUM_USER_ROLE.ADMIN), order_controller_1.OrderController.getAllOrders);
+router.get('/', (0, auth_1.default)(user_1.ENUM_USER_ROLE.ADMIN, user_1.ENUM_USER_ROLE.SELLER, user_1.ENUM_USER_ROLE.ADMIN), order_controller_1.OrderController.getAllOrders);
 exports.OrderRoutes = router;

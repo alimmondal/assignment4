@@ -13,7 +13,7 @@ import { AdminService } from './admin.service';
 
 const createAdmin: RequestHandler = catchAsync(
   async (req: Request, res: Response) => {
-    const { admin } = req.body;
+    const admin = req.body;
     const result = await AdminService.createAdminToDb(admin);
 
     sendResponse<IAdmin>(res, {

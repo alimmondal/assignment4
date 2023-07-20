@@ -27,19 +27,18 @@ exports.UserService = void 0;
 const http_status_1 = __importDefault(require("http-status"));
 const ApiError_1 = __importDefault(require("../../../errors/ApiError"));
 const user_model_1 = require("./user.model");
-const user_utils_1 = require("./user.utils");
-const createUsersToDb = (user) => __awaiter(void 0, void 0, void 0, function* () {
-    if (user.role === 'seller') {
-        const id = yield (0, user_utils_1.generateSellerId)();
-        user.id = id;
-    }
-    else {
-        const id = yield (0, user_utils_1.generateBuyerId)();
-        user.id = id;
-    }
-    const result = yield user_model_1.User.create(user);
-    return result;
-});
+// import { generateBuyerId, generateSellerId } from './user.utils';
+// const createUsersToDb = async (user: IUser): Promise<IUser | null> => {
+//   if (user.role === 'seller') {
+//     const id = await generateSellerId();
+//     user.id = id;
+//   } else {
+//     const id = await generateBuyerId();
+//     user.id = id;
+//   }
+//   const result = await User.create(user);
+//   return result;
+// };
 const getAllUsers = () => __awaiter(void 0, void 0, void 0, function* () {
     const result = yield user_model_1.User.find({});
     return result;
@@ -71,7 +70,7 @@ const deleteCUser = (id) => __awaiter(void 0, void 0, void 0, function* () {
     return result;
 });
 exports.UserService = {
-    createUsersToDb,
+    // createUsersToDb,
     getAllUsers,
     updateUser,
     deleteCUser,
