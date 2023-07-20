@@ -17,8 +17,6 @@
 
 <!-- user -->
 
-1. api/v1/users/signup (POST)
-
 2. api/v1/users(GET)
 3. api/v1/users/64a3adda2d9abbd1b01a8296(SINGLE GET)
 4. api/v1/users/64a3adb22d9abbd1b01a8293(DELETE)
@@ -45,8 +43,4 @@
 <!-- Orders -->
 
 1. api/v1/orders(POST) (buyerID: 64a3adb22d9abbd1b01a8293,sellerID: 64a3adda2d9abbd1b01a8296)
-2. api/v1/orders(GET)........................
-
-# assignment4
-
-# assignment4
+2. api/v1/orders(GET)

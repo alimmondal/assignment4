@@ -80,9 +80,17 @@ const getSingleCow = (id) => __awaiter(void 0, void 0, void 0, function* () {
     return result;
 });
 const updateCow = (id, payload) => __awaiter(void 0, void 0, void 0, function* () {
-    const isExist = yield cow_model_1.Cow.findOne({ _id: id });
+    const isExist = yield cow_model_1.Cow.findById({ _id: id });
     if (!isExist) {
         throw new ApiError_1.default(http_status_1.default.NOT_FOUND, 'Cow Id not found !');
+    }
+    const { name } = payload, cowData = __rest(payload, ["name"]);
+    const updatedCowData = Object.assign({}, cowData);
+    if (name && Object.keys(name).length > 0) {
+        Object.keys(name).forEach(key => {
+            const nameKey = `name.${key}`; // `name.fisrtName`
+            updatedCowData[nameKey] = name[key];
+        });
     }
     const result = yield cow_model_1.Cow.findOneAndUpdate({ _id: id }, payload, {
         new: true,

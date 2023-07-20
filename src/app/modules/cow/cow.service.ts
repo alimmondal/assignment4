@@ -80,10 +80,21 @@ const updateCow = async (
   id: string,
   payload: Partial<ICow>
 ): Promise<ICow | null> => {
-  const isExist = await Cow.findOne({ _id: id });
+  const isExist = await Cow.findById({ _id: id });
 
   if (!isExist) {
     throw new ApiError(httpStatus.NOT_FOUND, 'Cow Id not found !');
+  }
+
+  const { name, ...cowData } = payload;
+
+  const updatedCowData: Partial<ICow> = { ...cowData };
+
+  if (name && Object.keys(name).length > 0) {
+    Object.keys(name).forEach(key => {
+      const nameKey = `name.${key}` as keyof Partial<ICow>; // `name.fisrtName`
+      (updatedCowData as any)[nameKey] = name[key as keyof typeof name];
+    });
   }
 
   const result = await Cow.findOneAndUpdate({ _id: id }, payload, {
