@@ -57,7 +57,7 @@ const updateUser = async (
 };
 
 const deleteCUser = async (id: string): Promise<IUser | null> => {
-  const result = await User.findByIdAndDelete(id).populate('user');
+  const result = await User.findByIdAndDelete(id);
   return result;
 };
 
